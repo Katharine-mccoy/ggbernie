@@ -14,7 +14,7 @@ draw_key_bernie <-  function(data, params, size) {
 }
 
 # bernieGrob
-bernieGrob <- function(x, y, size, bernie = "bernie1", geom_key = list(sitting = "sitting.png",
+bernieGrob <- function(x, y, size, bernie = "sitting", geom_key = list(sitting = "sitting.png",
                                                                        stand = "stand.png",
                                                                        head = "head.png",
                                                                        asking = "asking.png",
@@ -39,12 +39,12 @@ GeomBernie <- ggplot2::ggproto(`_class` = "GeomBernie",
                                `_inherit` = ggplot2::Geom,
                                required_aes = c("x", "y"),
                                non_missing_aes = c("size", "bernie"),
-                               default_aes = ggplot2::aes(size = 1, bernie = "bernie1", shape  = 19,
+                               default_aes = ggplot2::aes(size = 1, bernie = "sitting", shape  = 19,
                                                           colour = "black",   fill   = NA,
                                                           alpha  = NA,
                                                           stroke =  0.5,
                                                           scale = 5,
-                                                          image_filename = "red"),
+                                                          image_filename = "sitting"),
 
                                draw_panel = function(data, panel_scales, coord, na.rm = FALSE) {
                                  coords <- coord$transform(data, panel_scales)
